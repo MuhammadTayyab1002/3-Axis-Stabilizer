@@ -1,0 +1,359 @@
+/* style.css - MT_Gimbal PCB Project */
+/* Modern dark theme with vibrant accents */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #0a0f1e 0%, #0c1222 100%);
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Poppins', 'Roboto', sans-serif;
+    color: #eef5ff;
+    line-height: 1.5;
+    padding: 2rem 1.5rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    backdrop-filter: blur(2px);
+}
+
+/* Header Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFFFFF, #7AB2FF, #3A86FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #a0b9e6;
+    margin-top: 0.75rem;
+    border-bottom: 1px dashed #2a3a60;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.badge {
+    background: rgba(20, 30, 55, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(58, 134, 255, 0.5);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.badge:hover {
+    border-color: #3A86FF;
+    transform: translateY(-2px);
+    background: rgba(40, 60, 100, 0.8);
+}
+
+/* two column layout */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.card {
+    background: rgba(12, 20, 30, 0.65);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    border: 1px solid rgba(72, 120, 200, 0.3);
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s;
+}
+
+.card:hover {
+    border-color: rgba(58, 134, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+.card-header {
+    padding: 1.3rem 1.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header span:first-child {
+    font-size: 1.6rem;
+}
+
+.card-content {
+    padding: 1.6rem 1.8rem;
+}
+
+/* left side: pcb visual + specs */
+.pcb-visual {
+    flex: 1.2;
+    min-width: 280px;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.spec-item {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 0.8rem 1rem;
+    border-radius: 1.2rem;
+    border-left: 3px solid #3A86FF;
+    transition: all 0.2s;
+}
+
+.spec-item:hover {
+    background: rgba(30, 50, 80, 0.5);
+    border-left-width: 4px;
+}
+
+.spec-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8aaee0;
+}
+
+.spec-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.diagram-placeholder {
+    background: #0a101ccc;
+    border-radius: 1.5rem;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    border: 1px solid #2c3e66;
+    text-align: center;
+}
+
+.pcb-svg {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* right panel */
+.right-panel {
+    flex: 0.9;
+    min-width: 280px;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.feature-list li span:first-child {
+    font-size: 1.3rem;
+}
+
+.feature-list li strong {
+    color: #7AB2FF;
+}
+
+.chip-icon {
+    background: #1e2a44;
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    border: 1px solid #3a5a8a;
+}
+
+/* README area */
+.readme-area {
+    margin-top: 2rem;
+    background: #07111ec9;
+    border-radius: 2rem;
+    border: 1px solid #2a3f66;
+    padding: 1.8rem 2rem;
+}
+
+.readme-header {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+    border-left: 5px solid #3A86FF;
+    padding-left: 1rem;
+}
+
+.readme-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.readme-content h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.4rem 0;
+    color: #bbd4ff;
+}
+
+.readme-content code {
+    background: #00000055;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #c3e88d;
+}
+
+.pre-block {
+    background: #03060e;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid #2c405e;
+    margin: 0.8rem 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+hr {
+    border-color: #2a3a5a;
+    margin: 1rem 0;
+}
+
+.footer-note {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    color: #6c86a3;
+    padding-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 780px) {
+    body {
+        padding: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .card-header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+    .card-content {
+        padding: 1.2rem;
+    }
+    .readme-area {
+        padding: 1.2rem;
+    }
+    .readme-header {
+        font-size: 1.4rem;
+    }
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.9rem;
+    }
+    .spec-value {
+        font-size: 1rem;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a4870;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3A86FF;
+}
+
+/* Utility classes for lists in readme */
+.readme-content ul, .readme-content ol {
+    margin-left: 1.8rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.readme-content li {
+    margin-bottom: 0.3rem;
+}
+
+a {
+    color: #7AB2FF;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #A8C9FF;
+    text-decoration: underline;
+}
+
+/* Button-like elements */
+.mock-btn {
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+/* special glow for svg text */
+.pcb-svg text {
+    user-select: none;
+}
