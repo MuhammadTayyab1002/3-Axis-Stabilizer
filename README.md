@@ -1,10 +1,10 @@
-# MT_Gimbal - 3-Axis Brushless Gimbal Controller
+#  3-Axis Brushless Stabilizer
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![STM32](https://img.shields.io/badge/STM32-L432-purple)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-**MT_Gimbal** is a professional-grade 3-axis brushless gimbal controller PCB built around the ultra-low-power **STM32L432** MCU. It features integrated three-phase motor drivers, onboard **MPU6050** IMU, and optimized power management — making it ideal for camera stabilizers, robotic platforms, handheld gimbals, and DIY stabilization projects.
+It is a professional-grade 3-axis brushless gimbal controller PCB built around the ultra-low-power **STM32L432** MCU. It features integrated three-phase motor drivers, onboard **MPU6050** IMU, and optimized power management — making it ideal for camera stabilizers, robotic platforms, handheld gimbals, and DIY stabilization projects.
 
 ---
 
