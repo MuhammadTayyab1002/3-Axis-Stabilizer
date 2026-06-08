@@ -110,24 +110,14 @@ document.addEventListener('keydown', (e) => {
 
 initPdfViewer();
 
+/// ============================================
+// 3. ALTIUM ONLINE VIEWER
 // ============================================
-// 3. IMPROVED STL VIEWER (model-viewer)
-// ============================================
-const modelViewer = document.getElementById('modelViewer');
-const resetBtn = document.getElementById('resetViewBtn');
-const autoRotateBtn = document.getElementById('toggleAutoRotate');
+const altiumIframe = document.getElementById('altiumIframe');
 
-if (resetBtn) {
-    resetBtn.onclick = () => {
-        modelViewer.cameraOrbit = '0deg 75deg 4.5m';
-    };
-}
-
-if (autoRotateBtn) {
-    let isAutoRotating = true;
-    autoRotateBtn.onclick = () => {
-        isAutoRotating = !isAutoRotating;
-        modelViewer.autoRotate = isAutoRotating;
-        autoRotateBtn.textContent = isAutoRotating ? "Stop Rotation" : "Auto Rotate";
+if (altiumIframe) {
+    // Optional: Auto-resize or error handling
+    altiumIframe.onerror = () => {
+        console.warn("Altium viewer failed to load - check your embed URL");
     };
 }

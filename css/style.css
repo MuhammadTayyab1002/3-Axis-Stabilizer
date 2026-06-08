@@ -352,14 +352,14 @@ canvas#pdfCanvas {
     height: auto;
 }
 
-/* STL Viewer (model-viewer) */
-.stl-viewer-area {
+/* Altium Viewer Styles */
+.altium-viewer-area {
     display: flex;
     flex-direction: column;
-    min-height: 580px;
+    min-height: 680px;
 }
 
-.stl-controls {
+.altium-controls {
     padding: 0.8rem;
     display: flex;
     justify-content: center;
@@ -370,24 +370,10 @@ canvas#pdfCanvas {
     border: 1px solid #1e2a44;
 }
 
-model-viewer {
-    width: 100%;
-    height: 520px;
+#altiumIframe {
     background-color: #11161f;
-    border-radius: 12px;
-    border: 1px solid #1e2a44;
     box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-
-/* Info Text */
-.info-text {
-    text-align: center;
-    font-size: 0.78rem;
-    padding: 0.7rem 1rem;
-    color: #8ba6d4;
-    background: rgba(15, 23, 42, 0.6);
-    border-radius: 8px;
-    margin-top: 1rem;
+    transition: height 0.3s ease;
 }
 
 /* Responsive */
@@ -399,6 +385,12 @@ model-viewer {
     model-viewer { height: 420px; }
     #pdfCanvasContainer { min-height: 380px; }
     .ctrl-btn { padding: 6px 12px; font-size: 0.8rem; }
+    #altiumIframe {
+        height: 520px;
+    }
+    .altium-viewer-area {
+        min-height: 580px;
+    }
 }
 
 /* Scrollbar */

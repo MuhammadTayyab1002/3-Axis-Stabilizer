@@ -157,39 +157,37 @@
         </div>
     </div>
 
-    <!-- ==================== SECTION 3: IMPROVED STL VIEWER ==================== -->
+        <!-- ==================== SECTION 3: ALTIUM ONLINE VIEWER ==================== -->
     <div class="section-header">
-        <i class="fas fa-cube"></i> 3D PCB Model Viewer
+        <i class="fas fa-layer-group"></i> Altium Online PCB Viewer
     </div>
     <div class="viewer-card">
         <div class="viewer-title">
-            <i class="fas fa-microchip"></i> PCB 3D Model (STL)
+            <i class="fas fa-microchip"></i> Interactive Schematic & PCB (Altium 365)
         </div>
         <div class="viewer-body">
-            <div class="stl-viewer-area">
-                <div class="stl-controls">
-                    <button id="resetViewBtn" class="ctrl-btn">Reset Camera</button>
-                    <button id="toggleAutoRotate" class="ctrl-btn">Stop Rotation</button>
+            <div class="altium-viewer-area">
+                <div class="altium-controls">
+                    <button onclick="document.getElementById('altiumIframe').contentWindow.location.reload()" class="ctrl-btn">
+                        <i class="fas fa-sync-alt"></i> Refresh Viewer
+                    </button>
                 </div>
                 
-                <model-viewer id="modelViewer"
-                    src="assets/PCB1.stl"
-                    alt="3D PCB Model"
-                    camera-controls
-                    auto-rotate
-                    shadow-intensity="1"
-                    exposure="0.8"
-                    style="width: 100%; height: 520px; background-color: #11161f; border-radius: 12px;">
-                </model-viewer>
+                <iframe src="https://personal-viewer.365.altium.com/client/index.html?feature=embed&source=6DCED7E5-80AA-4407-B9D7-ADE2ED62BD3F&activeView=PCB" 
+                width="1280" height="720" style="overflow:hidden;border:none;width:100%;height:720px;" 
+                scrolling="no" allowfullscreen="true" onload="window.top.scrollTo(0,0);"></iframe>
 
                 <div class="info-text">
-                    <i class="fas fa-mouse"></i> Drag to rotate • Scroll to zoom • Right-click to pan
+                    <i class="fas fa-info-circle"></i> 
+                    Full interactive viewer: Zoom • Measure • Highlight nets • 3D view • BOM • Cross-probing
+                    <br>
+                    <strong>Replace the src URL</strong> with your actual Altium 365 embed link.
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+    
 <script src="script.js" type="module"></script>
 </body>
 </html>
