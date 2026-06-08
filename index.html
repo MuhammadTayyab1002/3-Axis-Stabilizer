@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title> 3-Axis Stabilizer PCB - STM32L432</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- Google Model Viewer (for STL) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/model-viewer/v4.0.0/model-viewer.min.js" type="module"></script>
 </head>
 <body>
 <div class="container">
@@ -118,41 +124,40 @@
                 <span id="zoomPercent" class="ctrl-btn" style="background:#0f1a2a;">100%</span>
             </div>
             <div class="image-preview" id="imagePreviewContainer">
-                <img id="mainImage" src="assets/PCB1.png" alt="Gimbal PCB Schematic" 
-                     onerror="this.onerror=null; this.src='https://placehold.co/1000x700/1a2a3a/6ea8fe?text=Schematic+Image%0A%0APlace+assets/schematic.png'">
+                <img id="mainImage" src="assets/PCB1.png" alt="Gimbal PCB Schematic">
             </div>
-            <div class="asset-path"><i class="fas fa-folder-open"></i></div>
-            <div class="info-text"><i class="fas fa-mouse-pointer"></i> Scroll wheel to zoom | Supports PNG, JPG, WebP</div>
+            <div class="info-text"><i class="fas fa-mouse-pointer"></i> Scroll wheel to zoom</div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 2: PDF VIEWER (Preloaded) ==================== -->
+    <!-- ==================== SECTION 2: IMPROVED PDF VIEWER ==================== -->
     <div class="section-header">
         <i class="fas fa-file-pdf"></i> PDF Documentation
     </div>
     <div class="viewer-card">
         <div class="viewer-title">
-            <i class="fas fa-book"></i>Full Documentation
+            <i class="fas fa-book"></i> Full Documentation
         </div>
         <div class="viewer-body">
             <div class="pdf-viewer-area">
                 <div class="pdf-toolbar">
-                    <button id="prevPage" class="ctrl-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <button id="prevPage" class="ctrl-btn"><i class="fas fa-chevron-left"></i> Prev</button>
                     <span id="pageNumDisplay" class="ctrl-btn">Page 1 / --</span>
                     <button id="nextPage" class="ctrl-btn">Next <i class="fas fa-chevron-right"></i></button>
-                    <button id="zoomPdfIn" class="ctrl-btn"><i class="fas fa-search-plus"></i> Zoom+</button>
-                    <button id="zoomPdfOut" class="ctrl-btn"><i class="fas fa-search-minus"></i> Zoom-</button>
+                    <button id="zoomPdfIn" class="ctrl-btn"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoomPdfOut" class="ctrl-btn"><i class="fas fa-search-minus"></i></button>
+                    <button id="fitWidthBtn" class="ctrl-btn">Fit Width</button>
                 </div>
+                <div id="pdfLoading" class="loading">Loading PDF...</div>
                 <div id="pdfCanvasContainer">
                     <canvas id="pdfCanvas"></canvas>
                 </div>
-                <div class="asset-path"><i class="fas fa-file-pdf"></i></div>
-                <div class="info-text"><i class="fas fa-info-circle"></i> Preloaded PDF documentation — Use navigation buttons to browse pages</div>
+                <div class="info-text"><i class="fas fa-info-circle"></i> Arrow keys or buttons • Scroll to zoom</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 3: STL VIEWER (Preloaded) ==================== -->
+    <!-- ==================== SECTION 3: IMPROVED STL VIEWER ==================== -->
     <div class="section-header">
         <i class="fas fa-cube"></i> 3D PCB Model Viewer
     </div>
@@ -163,19 +168,28 @@
         <div class="viewer-body">
             <div class="stl-viewer-area">
                 <div class="stl-controls">
-                    <button id="resetViewBtn" class="ctrl-btn"><i class="fas fa-eye"></i> Reset Camera</button>
-                    <button id="toggleWireframe" class="ctrl-btn"><i class="fas fa-border-all"></i> Toggle Wireframe</button>
+                    <button id="resetViewBtn" class="ctrl-btn">Reset Camera</button>
+                    <button id="toggleAutoRotate" class="ctrl-btn">Stop Rotation</button>
                 </div>
-                <canvas id="stlCanvas"></canvas>
-                <div class="asset-path"><i class="fas fa-cube"></i></div>
-                <div class="info-text"><i class="fas fa-mouse"></i> Drag to rotate | Right-click to pan | Scroll to zoom | Preloaded STL model</div>
+                
+                <model-viewer id="modelViewer"
+                    src="assets/PCB1.stl"
+                    alt="3D PCB Model"
+                    camera-controls
+                    auto-rotate
+                    shadow-intensity="1"
+                    exposure="0.8"
+                    style="width: 100%; height: 520px; background-color: #11161f; border-radius: 12px;">
+                </model-viewer>
+
+                <div class="info-text">
+                    <i class="fas fa-mouse"></i> Drag to rotate • Scroll to zoom • Right-click to pan
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- External JavaScript file containing all viewer logic -->
 <script src="script.js" type="module"></script>
-
 </body>
 </html>
